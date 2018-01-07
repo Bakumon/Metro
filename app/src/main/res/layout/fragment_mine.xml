@@ -1,15 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:scrollbars="none">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="我的" />
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorAccent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingBottom="80dp"
+                android:paddingTop="60dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/civ_user_picture"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:src="@mipmap/zhaoliying" />
+
+                <TextView
+                    android:id="@+id/tv_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="赵丽颖小姐姐"
+                    android:textColor="@color/colorMineUserName"
+                    android:textSize="@dimen/mineUserName"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <me.bakumon.metro.business.mine.widget.MineItemView
+                android:id="@+id/st_route"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="-30dp"
+                app:icon="@mipmap/ic_launcher"
+                app:subtitle="起：劲松 终：南锣鼓巷"
+                app:title="我的行程" />
+
+            <me.bakumon.metro.business.mine.widget.MineItemView
+                android:id="@+id/st_nfc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                app:icon="@mipmap/ic_launcher"
+                app:subtitle="剩余35元，再使用5次即可享受半价优惠"
+                app:title="NFC云卡" />
+
+            <me.bakumon.metro.business.mine.widget.MineItemView
+                android:id="@+id/st_collect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                app:icon="@mipmap/ic_launcher"
+                app:subtitle="星巴克-劲松站C出口200m"
+                app:title="我的收藏" />
+
+            <me.bakumon.metro.business.mine.widget.MineItemView
+                android:id="@+id/st_station"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                app:icon="@mipmap/ic_launcher"
+                app:subtitle="可查询每个站的详细信息"
+                app:title="站点信息" />
+
+            <me.bakumon.metro.business.mine.widget.MineItemView
+                android:id="@+id/st_setting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                app:icon="@mipmap/ic_launcher"
+                app:subtitle="账号、密码等常用设置"
+                app:title="设置中心" />
+
+            <me.bakumon.metro.business.mine.widget.MineItemView
+                android:id="@+id/st_about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                app:icon="@mipmap/ic_launcher"
+                app:subtitle="点击了解更多"
+                app:title="关于" />
+        </LinearLayout>
+    </ScrollView>
 </layout>

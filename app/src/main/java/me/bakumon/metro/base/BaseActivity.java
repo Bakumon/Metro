@@ -12,13 +12,12 @@ import me.bakumon.metro.R;
 import me.bakumon.metro.utils.StatusBarUtil;
 
 /**
- * 滑动返回 Base 类
- * https://github.com/bingoogolapple/BGASwipeBackLayout-Android
+ * 1.沉浸式状态栏
+ * 2.ViewDataBinding 封装
  *
  * @author Bakumon
  * @date 17-3-5
  */
-
 public abstract class BaseActivity extends AppCompatActivity implements BGASwipeBackHelper.Delegate {
     protected BGASwipeBackHelper mSwipeBackHelper;
     private ViewDataBinding dataBinding;
@@ -63,10 +62,22 @@ public abstract class BaseActivity extends AppCompatActivity implements BGASwipe
      */
     private void setupStatusBar() {
         StatusBarUtil.darkMode(this);
-        StatusBarUtil.setPaddingSmart(this, dataBinding.getRoot());
+        if (setRootViewPadding()) {
+            StatusBarUtil.setPaddingSmart(this, dataBinding.getRoot());
+        }
     }
 
     /**
+     * 是否给跟布局设置和状态栏高度的 padding
+     *
+     * @return false：布局从屏幕顶部开始，true：布局从状态栏下面开始
+     */
+    protected boolean setRootViewPadding() {
+        return true;
+    }
+
+    /**
+     * https://github.com/bingoogolapple/BGASwipeBackLayout-Android
      * 初始化滑动返回。在 super.onCreate(savedInstanceState) 之前调用该方法
      */
     private void initSwipeBackFinish() {

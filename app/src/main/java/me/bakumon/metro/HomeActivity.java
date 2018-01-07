@@ -26,6 +26,11 @@ public class HomeActivity extends BaseActivity implements AHBottomNavigation.OnT
     }
 
     @Override
+    protected boolean setRootViewPadding() {
+        return false;
+    }
+
+    @Override
     protected void onInit() {
         binding = getDataBinding();
         setupBottomNavigation();

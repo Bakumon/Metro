@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="mineUserName">18sp</dimen>
+    <dimen name="settingTabTitle">16sp</dimen>
+    <dimen name="settingTabSubTitle">12sp</dimen>
+</resources>

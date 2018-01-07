@@ -16,6 +16,9 @@ import android.view.animation.AnimationUtils;
 import me.bakumon.metro.R;
 
 /**
+ * 1.ViewDataBinding 封装
+ * 2.显示隐藏动画
+ *
  * @author Bakumon
  * @date 2018/1/6
  */

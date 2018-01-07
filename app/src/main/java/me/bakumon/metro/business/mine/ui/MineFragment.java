@@ -3,6 +3,7 @@ package me.bakumon.metro.business.mine.ui;
 import me.bakumon.metro.R;
 import me.bakumon.metro.base.BaseFragment;
 import me.bakumon.metro.databinding.FragmentMineBinding;
+import me.bakumon.metro.utils.StatusBarUtil;
 
 /**
  * 我的 fragment
@@ -23,5 +24,6 @@ public class MineFragment extends BaseFragment {
     @Override
     protected void onInit() {
         binding = getDataBinding();
+        StatusBarUtil.darkMode(getActivity());
     }
 }
