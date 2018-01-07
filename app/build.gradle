@@ -9,14 +9,32 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        // 设置支持的SO库架构（开发者可以根据需要，选择一个或多个平台的so）
+        ndk {
+            abiFilters "armeabi"
+        }
     }
     dataBinding {
         enabled = true
+    }
+    signingConfigs {
+        release {
+            storeFile file("key")
+            storePassword KEYSTORE_PASSWORD
+            keyAlias "metro"
+            keyPassword KEY_PASSWORD
+        }
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            // 签名
+            signingConfig signingConfigs.release
+        }
+        debug {
+            // 签名
+            signingConfig signingConfigs.release
         }
     }
 }
@@ -38,4 +56,8 @@ dependencies {
     implementation 'com.github.Bakumon:StatusLayoutManager:1.0.1'
     // 圆形 ImageView
     implementation 'de.hdodenhof:circleimageview:2.2.0'
+    // 高德地图-3D地图
+    implementation 'com.amap.api:3dmap:5.6.0'
+    // 高德地图-定位
+    implementation 'com.amap.api:location:3.7.0'
 }
