@@ -64,6 +64,7 @@ public class HomeActivity extends BaseActivity implements AHBottomNavigation.OnT
     private void setupViewPager() {
         adapter = new ViewPagerAdapter(getSupportFragmentManager());
         binding.viewPager.setAdapter(adapter);
+        binding.viewPager.setOffscreenPageLimit(3);
     }
 
     @Override
@@ -75,15 +76,10 @@ public class HomeActivity extends BaseActivity implements AHBottomNavigation.OnT
         if (currentFragment == null) {
             currentFragment = adapter.getCurrentFragment();
         }
-        if (currentFragment != null) {
-            currentFragment.willBeHidden();
-        }
 
         binding.viewPager.setCurrentItem(position, false);
         currentFragment = adapter.getCurrentFragment();
-        if (currentFragment != null) {
-            currentFragment.willBeDisplayed();
-        }
+
         return true;
     }
 }

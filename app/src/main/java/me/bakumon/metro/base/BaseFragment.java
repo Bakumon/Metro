@@ -1,6 +1,8 @@
 package me.bakumon.metro.base;
 
+import android.annotation.SuppressLint;
 import android.databinding.DataBindingUtil;
+import android.databinding.Untaggable;
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
@@ -33,7 +35,7 @@ public abstract class BaseFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         dataBinding = DataBindingUtil.inflate(inflater, getLayoutId(), container, false);
         rootView = dataBinding.getRoot();
-        onInit();
+        onInit(savedInstanceState);
         return rootView;
     }
 
@@ -44,6 +46,13 @@ public abstract class BaseFragment extends Fragment {
      */
     @LayoutRes
     protected abstract int getLayoutId();
+
+    /**
+     * 开始的方法，子类如果需要用 Bundle，可以重写该方法
+     */
+    protected void onInit(@Nullable Bundle savedInstanceState){
+        onInit();
+    }
 
     /**
      * 开始的方法
