@@ -1,8 +1,6 @@
 package me.bakumon.metro.base;
 
-import android.annotation.SuppressLint;
 import android.databinding.DataBindingUtil;
-import android.databinding.Untaggable;
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
@@ -48,16 +46,9 @@ public abstract class BaseFragment extends Fragment {
     protected abstract int getLayoutId();
 
     /**
-     * 开始的方法，子类如果需要用 Bundle，可以重写该方法
-     */
-    protected void onInit(@Nullable Bundle savedInstanceState){
-        onInit();
-    }
-
-    /**
      * 开始的方法
      */
-    protected abstract void onInit();
+    protected abstract void onInit(@Nullable Bundle savedInstanceState);
 
     /**
      * 获取 ViewDataBinding

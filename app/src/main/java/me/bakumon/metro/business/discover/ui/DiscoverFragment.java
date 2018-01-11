@@ -1,5 +1,8 @@
 package me.bakumon.metro.business.discover.ui;
 
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+
 import me.bakumon.metro.R;
 import me.bakumon.metro.base.BaseFragment;
 import me.bakumon.metro.databinding.FragmentDiscoverBinding;
@@ -21,8 +24,7 @@ public class DiscoverFragment extends BaseFragment {
     }
 
     @Override
-    protected void onInit() {
+    protected void onInit(@Nullable Bundle savedInstanceState) {
         binding = getDataBinding();
     }
-
 }
